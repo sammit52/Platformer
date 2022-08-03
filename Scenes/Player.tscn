@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/hero/herochar_spritesheet(new).png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.5, 7 )
+extents = Vector2( 5, 7 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Attack"
