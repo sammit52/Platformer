@@ -23,6 +23,8 @@ func _ready():
 func update_animation(anim):
 	if velocity.x < 0:
 		$Sprite.flip_h = true
+		$CollisionPolygon2D.scale.x = -1
+	
 	elif velocity.x > 0:
 		$Sprite.flip_h = false
 	match(anim):
@@ -76,3 +78,9 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
 
+
+
+func _on_DeathZone_area_entered(area):
+	if area.is_in_group("Deadly"):
+		if GameStats.check_reset() == false:
+			global_position = GameStats.get_spawn().global_position
