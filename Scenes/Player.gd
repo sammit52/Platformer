@@ -4,9 +4,11 @@ export (int) var speed = 120
 export (int) var jump_speed = -200
 export (int) var gravity = 375
 export (int) var slide_speed = 400
+export (int) var orbs = 0
 
 var velocity = Vector2.ZERO
 var doublejump = true
+
 
 export (float) var friction = 10
 export (float) var acceleration = 25
@@ -14,7 +16,6 @@ export (float) var acceleration = 25
 enum state {IDLE, RUNNING, PUSHING, ROLL, JUMP, STARTJUMP, FALL, ATTACK, WALLJUMP}
 
 onready var player_state = state.IDLE
-
 
 
 func _ready():
@@ -112,6 +113,11 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 func _on_DeathZone_area_entered(area):
+	var points = 0
 	if area.is_in_group("Deadly"):
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
+	if area.is_in_group("Points"):
+		area.queue_free()
+		points = points + 1
+		print(points)

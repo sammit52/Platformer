@@ -3,6 +3,7 @@ extends Node
 onready var game_start_time = OS.get_ticks_msec()
 var current_spawn = null
 var resetdoors = false
+var points = 0
 
 func reset():
 	current_spawn = null
@@ -42,3 +43,6 @@ func get_time():
 			ms = "0"+str(ms)
 		
 	return str(minutes)+":"+str(seconds)+":"+str(ms)
+	
+func get_points():
+	return "Points: " + str(points)
