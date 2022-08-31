@@ -2,9 +2,9 @@ extends Node2D
 var dooropen = false
 
 func close_doors():
-		$AnimationPlayer.play("ButtonDown")
-		$AnimationPlayer.play("DoorClosed")
-		dooropen = false
+	$AnimationPlayer.play("ButtonDown")
+	$AnimationPlayer.play("DoorClosed")
+	dooropen = false
 
 func _ready():
 	$AnimationPlayer.play("ButtonUp")
