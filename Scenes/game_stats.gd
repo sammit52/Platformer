@@ -9,6 +9,7 @@ func reset():
 	current_spawn = null
 	get_tree().reload_current_scene()
 	game_start_time = OS.get_ticks_msec()
+	points = 0
 	resetdoors = false
 	
 func check_reset():

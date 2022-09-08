@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
 export (int) var speed = 120
-export (int) var jump_speed = -200
+export (int) var jump_speed = -165
 export (int) var gravity = 375
 export (int) var slide_speed = 400
-export (int) var orbs = 0
+
 
 var velocity = Vector2.ZERO
 var doublejump = true
@@ -64,9 +64,9 @@ func handle_state(player_state):
 		state.WALLJUMP:
 			velocity.y = jump_speed*0.7
 			if $Sprite.flip_h == false:
-				velocity.x = -250
+				velocity.x = -175
 			else:
-				velocity.x = 250
+				velocity.x = 175
 	pass
 
 func _physics_process(delta):
@@ -119,5 +119,5 @@ func _on_DeathZone_area_entered(area):
 			global_position = GameStats.get_spawn().global_position
 	if area.is_in_group("Points"):
 		area.queue_free()
-		points = points + 1
+		GameStats.points = GameStats.points + 1
 		print(points)

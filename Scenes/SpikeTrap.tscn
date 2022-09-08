@@ -43,6 +43,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ SubResource( 1 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.501961, 0.501961, 0.501961, 1 ) ]
+}
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 8, 3.25 )
@@ -87,10 +99,23 @@ tracks/2/keys = {
 "update": 1,
 "values": [ SubResource( 1 ), SubResource( 4 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.501961, 0.501961, 0.501961, 1 ) ]
+}
 
 [node name="SpikeTrap" type="Area2D" groups=["Deadly"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
 position = Vector2( 0, -2.25 )
 shape = SubResource( 1 )
 disabled = true
@@ -101,6 +126,7 @@ hframes = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "SpikeTrigger"
+playback_speed = 1.5
 anims/RESET = SubResource( 3 )
 anims/SpikeTrigger = SubResource( 2 )
 
