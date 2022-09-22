@@ -1,9 +1,10 @@
 extends Node
-
+var menu_start
 onready var game_start_time = OS.get_ticks_msec()
 var current_spawn = null
 var resetdoors = false
 var points = 0
+var gamestart = false
 
 func reset():
 	current_spawn = null
@@ -11,6 +12,9 @@ func reset():
 	game_start_time = OS.get_ticks_msec()
 	points = 0
 	resetdoors = false
+	
+func reset_timer():
+	game_start_time = OS.get_ticks_msec()
 	
 func check_reset():
 	var doors = get_tree().get_nodes_in_group(("Door"))
@@ -42,8 +46,8 @@ func get_time():
 			ms = "00"
 		else:
 			ms = "0"+str(ms)
-		
+			
 	return str(minutes)+":"+str(seconds)+":"+str(ms)
-	
+		
 func get_points():
 	return "Points: " + str(points)

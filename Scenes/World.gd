@@ -2,8 +2,8 @@ extends Node2D
 
 
 func _ready():
-	pass
-
+	GameStats.reset_timer()
+	
 func _process(delta):
 	$CanvasLayer/Control2/Label.text = GameStats.get_points()
 	if Input.is_action_just_pressed("reset"):
