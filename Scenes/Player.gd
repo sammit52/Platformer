@@ -110,8 +110,8 @@ func _physics_process(delta):
 		gravity = 375
 		velocity.y += gravity * delta
 		
-	velocity = move_and_slide(velocity, Vector2.UP)
-
+	velocity = move_and_slide_with_snap(velocity,Vector2.DOWN, Vector2.UP)
+	
 func _on_DeathZone_area_entered(area):
 	var points = 0
 	if area.is_in_group("Deadly"):

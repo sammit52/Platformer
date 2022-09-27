@@ -59,12 +59,12 @@ tracks/3/path = NodePath("Door/Door/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Button:texture")
@@ -181,7 +181,7 @@ shape = SubResource( 2 )
 position = Vector2( 41, -7 )
 texture = ExtResource( 1 )
 hframes = 10
-frame = 2
+frame = 7
 __meta__ = {
 "_edit_group_": true
 }
