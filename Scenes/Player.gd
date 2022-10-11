@@ -114,10 +114,12 @@ func _physics_process(delta):
 	
 func _on_DeathZone_area_entered(area):
 	var points = 0
+	if area.is_in_group("Points"):
+			GameStats.points = GameStats.points + 1
+			print(points)
+			
 	if area.is_in_group("Deadly"):
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
-	if area.is_in_group("Points"):
-		area.queue_free()
-		GameStats.points = GameStats.points + 1
-		print(points)
+
+

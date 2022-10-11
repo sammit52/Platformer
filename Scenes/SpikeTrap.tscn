@@ -65,7 +65,7 @@ extents = Vector2( 8, 3.25 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "SpikeTrigger"
-length = 2.0
+length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -73,10 +73,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 4, 3, 2, 5, 6, 1 ]
+"values": [ 1, 2, 3, 4, 4, 3, 2, 5, 6, 1 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CollisionShape2D:disabled")
@@ -142,7 +142,6 @@ disabled = true
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 7
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
@@ -157,5 +156,6 @@ position = Vector2( 0, 7 )
 [node name="Detect" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, -3.75 )
 shape = SubResource( 5 )
+disabled = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

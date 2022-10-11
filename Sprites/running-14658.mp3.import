@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/running-14658.mp3-0a7a418f882724d9097cf1ea278a8b63.mp3str"
+
+[deps]
+
+source_file="res://Sprites/running-14658.mp3"
+dest_files=[ "res://.import/running-14658.mp3-0a7a418f882724d9097cf1ea278a8b63.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
