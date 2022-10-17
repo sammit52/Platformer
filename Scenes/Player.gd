@@ -117,6 +117,7 @@ func _on_DeathZone_area_entered(area):
 	if area.is_in_group("Points"):
 			GameStats.points = GameStats.points + 1
 			print(points)
+			#area.queue_free()
 			
 	if area.is_in_group("Deadly"):
 		if GameStats.check_reset() == false:
