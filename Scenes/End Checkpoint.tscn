@@ -205,20 +205,20 @@ tracks/3/keys = {
 "values": [ 2.0 ]
 }
 
-[node name="End Checkpoint" type="Node2D"]
+[node name="End Checkpoint" type="Node2D" groups=["End"]]
 script = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="." groups=["End"]]
 texture = ExtResource( 2 )
 hframes = 30
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["End"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["End"]]
 position = Vector2( -8.5, 8.5 )
 shape = SubResource( 1 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["End"]]
 autoplay = "Idle"
 playback_speed = 2.0
 anims/Checkpoint = SubResource( 2 )
@@ -226,4 +226,4 @@ anims/Idle = SubResource( 3 )
 "anims/Not Touched" = SubResource( 4 )
 anims/RESET = SubResource( 5 )
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

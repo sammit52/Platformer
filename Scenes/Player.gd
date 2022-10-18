@@ -118,9 +118,10 @@ func _on_DeathZone_area_entered(area):
 			GameStats.points = GameStats.points + 1
 			print(points)
 			#area.queue_free()
-			
-	if area.is_in_group("Deadly"):
+	elif area.is_in_group("Deadly"):
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
+	elif area.is_in_group("End"):
+		get_tree().change_scene("res://End Scene.tscn")
 
 
