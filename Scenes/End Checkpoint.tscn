@@ -226,4 +226,5 @@ anims/Idle = SubResource( 3 )
 "anims/Not Touched" = SubResource( 4 )
 anims/RESET = SubResource( 5 )
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
