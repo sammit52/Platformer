@@ -2,9 +2,11 @@
 
 [ext_resource path="res://Sprites/hud/orbs_hud.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=180]
+extents = Vector2( 7.5, 8 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=181]
+extents = Vector2( 5.5, 5.5 )
 
 [node name="Teleporter" type="Area2D" groups=["Teleporter"]]
 
@@ -17,7 +19,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporter1"]
 position = Vector2( 59, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 180 )
 
 [node name="Teleporter2" type="Area2D" parent="."]
 
@@ -27,9 +29,9 @@ scale = Vector2( 2.22222, 2.22222 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporter2"]
-shape = SubResource( 1 )
+shape = SubResource( 180 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 181 )
 
 [connection signal="area_entered" from="Teleporter1" to="." method="_on_Teleporter_1_area_entered"]

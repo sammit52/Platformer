@@ -125,8 +125,9 @@ func _on_DeathZone_area_entered(area):
 	elif area.is_in_group("End"):
 		if GameStats.points >= 50:
 			get_tree().change_scene("res://Scenes/EndScene.tscn")
-	#elif area.is_in_group("Teleporter"):
-		#$Player.x = Teleporter.get_postition()
+	elif area.is_in_group("Teleporter"):
+		global_position.x = global_position.x + 1570
+		global_position.y = global_position.y - 680
 
 
 
