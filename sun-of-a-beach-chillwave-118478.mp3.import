@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sun-of-a-beach-chillwave-118478.mp3-4971dbb77094eb844c82c5bd33907fba.mp3str"
+
+[deps]
+
+source_file="res://sun-of-a-beach-chillwave-118478.mp3"
+dest_files=[ "res://.import/sun-of-a-beach-chillwave-118478.mp3-4971dbb77094eb844c82c5bd33907fba.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

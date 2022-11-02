@@ -17,6 +17,7 @@ config/icon="res://Sprites/icon.png"
 [autoload]
 
 GameStats="*res://Scenes/game_stats.gd"
+Sound="*res://Scenes/Sound.gd"
 
 [display]
 

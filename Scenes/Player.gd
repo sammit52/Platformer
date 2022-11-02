@@ -43,7 +43,6 @@ func update_animation(anim):
 			$AnimationPlayer.play("Running")
 		state.ROLL:
 			$AnimationPlayer.play("Roll")
-		
 	pass
 	
 func get_input():
@@ -115,13 +114,19 @@ func _physics_process(delta):
 func _on_DeathZone_area_entered(area):
 	var points = 0
 	if area.is_in_group("Points"):
-			GameStats.points = GameStats.points + 1
-			print(points)
-			#area.queue_free()
+		Sound.play_sound_effect("coin")
+		GameStats.points = GameStats.points + 1
+		print(points)
+		#area.queue_free()
 	elif area.is_in_group("Deadly"):
+		Sound.play_sound_effect("dead")
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
 	elif area.is_in_group("End"):
-		get_tree().change_scene("res://End Scene.tscn")
+		if GameStats.points >= 50:
+			get_tree().change_scene("res://Scenes/EndScene.tscn")
+	#elif area.is_in_group("Teleporter"):
+		#$Player.x = Teleporter.get_postition()
+
 
 

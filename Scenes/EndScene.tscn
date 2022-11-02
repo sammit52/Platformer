@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sprites/stringstar fields/example.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/vp-pixel.simplified-demo.otf" type="DynamicFontData" id=2]
@@ -13,16 +13,6 @@ font_data = ExtResource( 2 )
 bg_color = Color( 0.341176, 0.341176, 0.341176, 1 )
 
 [sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0.341176, 0.341176, 0.341176, 1 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 36
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.341176, 0.341176, 0.341176, 1 )
-
-[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.341176, 0.341176, 0.341176, 1 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -81,21 +71,10 @@ custom_styles/focus = SubResource( 8 )
 text = "Replay"
 expand_icon = true
 
-[node name="OptionsButton" type="Button" parent="Buttons"]
+[node name="QuitButton" type="Button" parent="Buttons"]
 margin_top = 74.0
 margin_right = 172.0
 margin_bottom = 133.0
-custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
-custom_fonts/font = SubResource( 2 )
-custom_styles/hover = SubResource( 5 )
-custom_styles/focus = SubResource( 9 )
-text = "Options"
-expand_icon = true
-
-[node name="QuitButton" type="Button" parent="Buttons"]
-margin_top = 148.0
-margin_right = 172.0
-margin_bottom = 207.0
 focus_neighbour_bottom = NodePath("../StartButton")
 custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
 custom_fonts/font = SubResource( 3 )
@@ -107,9 +86,6 @@ expand_icon = true
 [connection signal="mouse_entered" from="Buttons/StartButton" to="." method="_on_StartButton_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/StartButton" to="." method="_on_StartButton_mouse_exited"]
 [connection signal="pressed" from="Buttons/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="mouse_entered" from="Buttons/OptionsButton" to="." method="_on_OptionsButton_mouse_entered"]
-[connection signal="mouse_exited" from="Buttons/OptionsButton" to="." method="_on_OptionsButton_mouse_exited"]
-[connection signal="pressed" from="Buttons/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="mouse_entered" from="Buttons/QuitButton" to="." method="_on_QuitButton_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/QuitButton" to="." method="_on_QuitButton_mouse_exited"]
 [connection signal="pressed" from="Buttons/QuitButton" to="." method="_on_QuitButton_pressed"]
